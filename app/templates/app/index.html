@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Disaster Prediction </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+
+</head>
+<body>
+    <div>
+        <form action="{% url 'result' %}" >  
+            {% csrf_token %}
+            <p>Passenger Class</p>
+            <select value = "" name="pclass">
+                <option hidden>Select the Passenger Class</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+            <p> Passenger Gender</p>
+            <select value = "" name="sex">
+                <option hidden>Select the Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <p> Passenger Age </p>
+            <input type="text" name="age">
+
+            <p>Number of and Sibilings and Spouses of Passenger</p>
+            <input type="text" name="sibsp">
+
+            <p>Number of Parents and Child </p>
+            <input type="text" name="parch">
+
+            <p>Passenger Fare</p>
+            <input type="text" name="fare">
+
+            <p> Passenger Embarked</p>
+            <select value = "" name="embarked">
+                <option hidden>Select the Passenger Emabarked</option>
+                <option value="s">S</option>
+                <option value="c">C</option>
+                <option value="q">Q</option>
+            </select>
+            <p>title</p>
+            <input type="text" name="title">
+
+            <button type="submit" name="proceed">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
